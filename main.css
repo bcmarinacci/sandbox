@@ -1,0 +1,23 @@
+html {
+  background-color: #272822;
+  color: #f8f8f2;
+}
+
+#title {
+  border-bottom: 2px;
+  border-color: #F92672;
+  color: #66D9EF;
+  font-size: 30px;
+  font-style: italic;
+  font-weight: bold;
+  padding-left: 220px;
+}
+
+#output {
+  font: 16px monospace;
+  padding-left: 260px;
+}
+
+.arrow {
+  color: #F92672;
+}
