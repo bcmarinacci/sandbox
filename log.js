@@ -12,7 +12,7 @@ window.log = function log() {
     }
 
     if (i !== args.length - 1) {
-      result += ', ';
+      result += ' ';
     }
   }
 
