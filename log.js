@@ -20,4 +20,6 @@ window.log = function log() {
   p.setAttribute('class', 'log');
   p.innerHTML = '<span class="arrow">→ </span>' + result;
   output.appendChild(p);
+
+  return args[0];
 }
