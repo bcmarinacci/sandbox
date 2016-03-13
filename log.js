@@ -1,9 +1,8 @@
 window.log = function log() {
   var output = document.getElementById('output');
   var result = '';
-  var args = Array.prototype.slice.call(arguments);
-  for (var i = 0; i < args.length; i++) {
-    var arg = args[i];
+  for (var i = 0; i < arguments.length; i++) {
+    var arg = arguments[i];
     var argumentType = typeof arg;
     if (argumentType === 'function') {
       result += arg.toString();
@@ -11,7 +10,7 @@ window.log = function log() {
       result += JSON.stringify(arg);
     }
 
-    if (i !== args.length - 1) {
+    if (i !== arguments.length - 1) {
       result += ' ';
     }
   }
@@ -21,5 +20,5 @@ window.log = function log() {
   p.innerHTML = '<span class="arrow">→ </span>' + result;
   output.appendChild(p);
 
-  return args[0];
+  return arguments[0];
 }
