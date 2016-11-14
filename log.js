@@ -19,5 +19,7 @@ window.log = (...args) => {
   p.innerHTML = '<span class="arrow">→ </span>' + result;
   output.appendChild(p);
 
-  return args[0];
+  // Return the last argument so that log('x:', x) returns the value, `x`,
+  // instead of the identifier string, 'x:'
+  return args[args.length - 1];
 };
