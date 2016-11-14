@@ -1,24 +1,23 @@
-window.log = function log() {
-  var output = document.getElementById('output');
-  var result = '';
-  for (var i = 0; i < arguments.length; i++) {
-    var arg = arguments[i];
-    var argumentType = typeof arg;
-    if (argumentType === 'function') {
-      result += arg.toString();
-    } else {
-      result += JSON.stringify(arg);
-    }
+'use strict';
 
-    if (i !== arguments.length - 1) {
-      result += ' ';
-    }
-  }
+window.log = (...args) => {
+  const output = document.getElementById('output');
+  const result = (
+    args
+      .map((arg) => {
+        if (arg instanceof Function) {
+          return arg.toString();
+        }
 
-  var p = document.createElement('p');
+        return JSON.stringify(arg);
+      })
+      .join(' ')
+  );
+
+  const p = document.createElement('p');
   p.setAttribute('class', 'log');
   p.innerHTML = '<span class="arrow">→ </span>' + result;
   output.appendChild(p);
 
-  return arguments[0];
-}
+  return args[0];
+};
