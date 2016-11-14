@@ -11,7 +11,7 @@ window.log = (...args) => {
 
         return JSON.stringify(arg);
       })
-      .join(' ')
+      .join(', ')
   );
 
   const p = document.createElement('p');
